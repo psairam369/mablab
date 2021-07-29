@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "820146419528",
+    "project_id": "smartcalci-dce40",
+    "storage_bucket": "smartcalci-dce40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820146419528:android:58f47f5fe053205f8c257d",
+        "android_client_info": {
+          "package_name": "com.example.smartcalci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820146419528-e9oi14v0ril6ik6p96fje9tjd714qc3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqhtTP8tL1sIlRKpWoaQjP_DKkd62bHHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820146419528-e9oi14v0ril6ik6p96fje9tjd714qc3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
