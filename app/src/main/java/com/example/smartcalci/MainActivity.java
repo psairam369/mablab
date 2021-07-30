@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imgveiw;
     private Bitmap img;
     private TextView res;
-    public String s;
-    public String expression;
+    public String g;
+    public  long finalres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +57,13 @@ public class MainActivity extends AppCompatActivity {
         pred.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            /*long finalres;
-            finalres=calculateExpression(expression);
-            String finalans =Long.toString(finalres);
-            res.setText(finalans);*/
-            String no=expression;
-                long b=calculateExpression(no);
-                String finalans =Long.toString(b);
+
+                finalres=calculateExpression(g);
+                String finalans =Long.toString(finalres);
                 res.setText(finalans);
+
+               // System.out.println("result :"+calculateExpression(g));
+
 
             }
         });
@@ -164,7 +163,7 @@ public static long calculateExpression(String expression) {
         precedenceList.add('(');
         precedenceList.add(')');
         precedenceList.add('/');
-        precedenceList.add('*');
+        precedenceList.add('x');
         precedenceList.add('%');
         precedenceList.add('+');
         precedenceList.add('-');
@@ -185,6 +184,7 @@ public static long calculateExpression(String expression) {
     public static long arithmeticOperation(long value2, long value1, Character operator) {
 
         long result;
+        float res;
 
         switch (operator) {
 
@@ -196,12 +196,13 @@ public static long calculateExpression(String expression) {
                 result = value1 - value2;
                 break;
 
-            case '*':
+            case 'x':
                 result = value1 * value2;
                 break;
 
             case '/':
-                result = value1 / value2;
+                res = (float)value1 / (float)value2;
+                result=(long) res;
                 break;
 
             case '%':
@@ -225,7 +226,7 @@ public static long calculateExpression(String expression) {
         }
 
         HashSet<Character> validCharactersSet = new HashSet<>();
-        validCharactersSet.add('*');
+        validCharactersSet.add('x');
         validCharactersSet.add('+');
         validCharactersSet.add('-');
         validCharactersSet.add('/');
@@ -290,25 +291,14 @@ public static long calculateExpression(String expression) {
 
                 @Override
                 public void onSuccess(FirebaseVisionText firebaseVisionText) {
-                    String g = firebaseVisionText.getText();
+                     g = firebaseVisionText.getText();
 
-                    char[] ch2 = new char[10];
-
-                    int i;
-                    char[] ch1 = g.toCharArray();
-
-                    for (i = 0; i < ch1.length; i++) {
-                        if (ch1[i] == 't') {
-                            ch2[i] = '+';
-                        } else {
-                            ch2[i] = ch1[i];
-                        }
-                    }
-                     expression = new String(ch2);
-                    ans.setText(expression);
+                         ans.setText(g);
 
 
 ///////////////////////////////////////////////////////////////
+
+
 
 //////////////////////////////////////////////////////////////
 
